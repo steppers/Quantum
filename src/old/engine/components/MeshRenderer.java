@@ -1,6 +1,7 @@
 package old.engine.components;
 
 import old.engine.core.GameObject;
+import old.engine.core.QuantumGame;
 import old.engine.ext.SceneManager;
 import old.engine.graphics.Material;
 import old.engine.math.Matrix4f;
@@ -28,9 +29,9 @@ public class MeshRenderer extends Component
         getGameObject().getTransform().calcTransformation();
         Matrix4f transformation = getGameObject().getTransform().getTransformation();
         material.getShader().updateUniforms(transformation,
-                        SceneManager.FindGameObjectWithTag("Camera").getComponent(Camera.class).getProjectedTransformation(transformation),
-                        SceneManager.FindGameObjectWithTag("Camera").getComponent(Camera.class).getViewMatrix(transformation),
-                        SceneManager.FindGameObjectWithTag("Camera").getComponent(Camera.class).getNormalViewMatrix(transformation),
+                SceneManager.FindGameObjectWithTag("Camera").getComponent(Camera.class).getProjectedTransformation(transformation),
+                SceneManager.FindGameObjectWithTag("Camera").getComponent(Camera.class).getViewMatrix(transformation),
+                SceneManager.FindGameObjectWithTag("Camera").getComponent(Camera.class).getNormalViewMatrix(transformation),
                         material);
         meshFilter.getSharedMesh().draw();
     }  

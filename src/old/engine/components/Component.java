@@ -1,6 +1,7 @@
 package old.engine.components;
 
 import old.engine.core.GameObject;
+import old.engine.core.QuantumGame;
 
 public class Component 
 {

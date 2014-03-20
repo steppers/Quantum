@@ -20,7 +20,6 @@ public class Window {
         } catch (LWJGLException e) {
             e.printStackTrace();
         }
-        Display.setVSyncEnabled(true);
     }
     
     public static void setDisplayMode(int width, int height, boolean fullscreen) {

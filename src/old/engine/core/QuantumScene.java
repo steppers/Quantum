@@ -1,7 +1,8 @@
 package old.engine.core;
 
-public class QuantumScene 
-{    
+public abstract class QuantumScene
+{
+
     public void init(){
         
     }

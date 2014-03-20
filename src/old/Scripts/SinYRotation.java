@@ -1,6 +1,7 @@
 package old.Scripts;
 
 import old.engine.components.Component;
+import old.engine.core.QuantumGame;
 import old.engine.core.Time;
 import old.engine.core.GameObject;
 

@@ -2,6 +2,7 @@ package old.test;
 
 import old.engine.components.MeshFilter;
 import old.engine.components.MeshRenderer;
+import old.engine.core.QuantumGame;
 import old.engine.core.QuantumScene;
 import old.engine.core.GameObject;
 import old.engine.ext.SceneManager;

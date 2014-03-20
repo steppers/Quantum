@@ -14,10 +14,10 @@ out vec4 out_Color;
 float zFar = 1000;
 float zNear = 0.01;
 
-float SSAOIntensity = 1;
-float SSAORadius = 5.5;
-float SSAOScale = 4;
-float SSAOBias = 0.4;
+float SSAOIntensity = 2;
+float SSAORadius = 10;
+float SSAOScale = 5;
+float SSAOBias = 0.2;
 
 float getDepth(vec2 uv){
 	float tex = texture(depth_Tex, uv);
@@ -27,7 +27,7 @@ float getDepth(vec2 uv){
 }
 
 vec3 getPosition(vec2 uv){
-	return texture(position_Tex, pass_TextureCoord).xyz;
+	return texture(position_Tex, uv).xyz;
 }
 
 vec2 getRandom(vec2 uv){
@@ -37,16 +37,16 @@ vec2 getRandom(vec2 uv){
 vec3 normalFromDepth(float depth, vec2 uv){
 	vec2 offset1 = vec2(0, 0.001);
 	vec2 offset2 = vec2(0.001, 0);
-	
+
 	float depth1 = getDepth(uv + offset1);
 	float depth2 = getDepth(uv + offset2);
-	
+
 	vec3 p1 = vec3(offset1, depth1 - depth);
 	vec3 p2 = vec3(offset2, depth2 - depth);
-	
+
 	vec3 normal = cross(p1, p2);
 	normal.z *= -1;
-	
+
 	return normalize(normal);
 }
 

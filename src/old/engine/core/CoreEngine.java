@@ -1,5 +1,6 @@
 package old.engine.core;
 
+import old.engine.ext.SceneManager;
 
 /**
  * Class {@code CoreEngine} is the root of the entire Quantum
@@ -23,6 +24,9 @@ public class CoreEngine {
     /**Time between frames*/
     private double frameTime;
 
+    /**The Rendering Engine*/
+    private RenderingEngine renderingEngine;
+
     /**
      * Constructor for {@code CoreEngine}
      */
@@ -32,6 +36,7 @@ public class CoreEngine {
         this.width = width;
         this.height = height;
         this.frameTime = 1.0/framerate;
+        this.renderingEngine = new RenderingEngine();
     }
 
     private void initializeRenderingSystem(){
@@ -125,6 +130,8 @@ public class CoreEngine {
                 }
             }
             if (render) {
+//                renderingEngine.render(SceneManager.getRootNode());
+//                Window.render();
                 render();
                 frames++;
             } else {

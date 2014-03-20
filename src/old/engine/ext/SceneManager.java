@@ -13,7 +13,7 @@ public class SceneManager {
     private static QuantumScene nextScene;
     private static QuantumScene currentScene;
 
-    public static GameObject rootNode = new GameObject(Vector3f.ZERO_VECTOR, Vector3f.ZERO_VECTOR, Vector3f.ONE_VECTOR, "ROOT_NODE");
+    private static GameObject rootNode = new GameObject(Vector3f.ZERO_VECTOR, Vector3f.ZERO_VECTOR, Vector3f.ONE_VECTOR, "ROOT_NODE");
 
     public static void addGameObject(GameObject g) {
         rootNode.addChild(g);
@@ -73,5 +73,9 @@ public class SceneManager {
         nextScene.init();
         currentScene = nextScene;
         nextScene = null;
+    }
+
+    public static GameObject getRootNode(){
+        return rootNode;
     }
 }

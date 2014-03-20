@@ -1,22 +1,25 @@
 package old.engine.core;
 
+import old.FBO.FBOManager;
 import old.engine.ext.SceneManager;
 
-public class QuantumGame {
+import java.util.ArrayList;
+
+public abstract class QuantumGame {
 
     public void init(){
 
     }
-    
-    public void input(){
+
+    public void input() {
         SceneManager.input();
     }
-    
-    public void update(){
+
+    public void update() {
         SceneManager.update();
     }
-    
-    public void render(){
+
+    public void render() {
         SceneManager.render();
     }
 }
