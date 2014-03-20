@@ -52,22 +52,20 @@ public class SceneManager {
     public static ArrayList<GameObject> FindGameObjectsWithTag(String tag) {
         return rootNode.getChildrenWithTag(tag);
     }
+
+    private static ArrayList<GameObject> FindRemoveOnLoads(){
+        return rootNode.getRemoveOnLoads();
+    }
     
     public static void loadScene(QuantumScene nextScene){
         SceneManager.nextScene = nextScene;
     }
     
     public static void updateLoadScene(){
-        ArrayList<GameObject> ids = new ArrayList<>();
-        for (GameObject g : gameObjects) {
-            if(g.removesOnSceneLoad()){
-                ids.add(g);
-            }
-        }
+        ArrayList<GameObject> ids = FindRemoveOnLoads();
         for(GameObject g : ids){
             rootNode.removeChild(g);
             g.destroy();
-            gameObjects.remove(g);
         }
         ids.clear();
         if(currentScene != null)

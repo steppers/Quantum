@@ -58,31 +58,4 @@ public class LightModel
         dirLights.remove(light);
     }
     
-    private static int frameBuffer;
-    private static int depthTexture;
-    
-    public static void setupFrameBuffer(){
-        //framebuffer
-        frameBuffer = glGenFramebuffers();
-        glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
-        
-        //depth texture
-        depthTexture = glGenTextures();
-        glBindTexture(GL_TEXTURE_2D, depthTexture);
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, 1024, 1024, 0, GL_DEPTH_COMPONENT, GL_FLOAT, 0);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
-        
-        glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, depthTexture, 0);
-        glDrawBuffer(GL_NONE);
-        
-        if(GL30.glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE){
-            System.err.println("Error: Framebuffer not created!");
-            return;
-        }
-        
-    }
-    
 }

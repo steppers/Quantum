@@ -57,7 +57,6 @@ public class GameObject {
         for (Component c : components) {
             if ("MeshRenderer".equals(c.getType()) && c.isActive() && this.isActive()) {
                 c.render();
-                return;
             }
         }
         for (GameObject g : children) {
@@ -119,7 +118,25 @@ public class GameObject {
     }
 
     public void removeChild(GameObject child){
-        children.remove(child);
+        if(children.contains(child)){
+            children.remove(child);
+        }else{
+            for(GameObject c : children){
+                c.removeChild(child);
+            }
+        }
+    }
+
+    public ArrayList<GameObject> getRemoveOnLoads(){
+        ArrayList<GameObject> gos = new ArrayList<>();
+        for (GameObject g : children) {
+            if (g.removesOnSceneLoad()) {
+                gos.add(g);
+            } else {
+                gos.addAll(g.getRemoveOnLoads());
+            }
+        }
+        return gos;
     }
 
     public void resetAnimations(){
@@ -148,6 +165,7 @@ public class GameObject {
     }
 
     public void setActiveRecursively(boolean val) {
+        active = val;
         for (GameObject g : children) {
             g.setActiveRecursively(val);
         }
