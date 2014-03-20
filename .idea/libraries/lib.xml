@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/PNGDecoder.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slick-util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../LWJGL-2.9.1/lwjgl-2.9.1/jar/lwjgl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../LWJGL-2.9.1/lwjgl-2.9.1/jar/lwjgl_util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../LWJGL-2.9.1/lwjgl-2.9.1/jar/jinput.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../../LWJGL-2.9.1/javadoc" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../LWJGL-2.9.1/source/src/java" />
+      <root url="file://$PROJECT_DIR$/../../LWJGL-2.9.1/source/src/generated" />
+      <root url="file://$PROJECT_DIR$/../../LWJGL-2.9.1/source/src/templates" />
+    </SOURCES>
+  </library>
+</component>
