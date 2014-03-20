@@ -1,75 +1,56 @@
 package old.engine.ext;
 
 import old.FBO.FBOManager;
+import old.engine.core.GameObject;
 import old.engine.core.QuantumScene;
 import old.engine.core.RenderUtil;
+import old.engine.math.Vector3f;
+
 import java.util.ArrayList;
 
 public class SceneManager {
 
-    private static ArrayList<GameObject> gameObjects = new ArrayList<>();
     private static QuantumScene nextScene;
     private static QuantumScene currentScene;
 
+    public static GameObject rootNode = new GameObject(Vector3f.ZERO_VECTOR, Vector3f.ZERO_VECTOR, Vector3f.ONE_VECTOR, "ROOT_NODE");
+
     public static void addGameObject(GameObject g) {
-        gameObjects.add(g);
+        rootNode.addChild(g);
     }
 
     public static void destroyGameObject(GameObject g) {
+        rootNode.removeChild(g);
         g.destroy();
-        gameObjects.remove(g);
     }
 
     public static void input() {
         if(nextScene != null){
             updateLoadScene();
         }
-        for (GameObject g : gameObjects) {
-            g.input();
-        }
+        rootNode.input();
     }
 
     public static void update() {
-        for (GameObject g : gameObjects) {
-            g.update();
-        }
+        rootNode.update();
     }
 
     public static void render() {
-        //Use the old.FBO
+        //Use the FBO
         FBOManager.useFBO(true);
         RenderUtil.clearScreen();
-        for (GameObject g : gameObjects) {
-            g.render();
-        }
-        for (GameObject g : gameObjects) {
-            g.getTransform().resetAnimations();
-        }
+        rootNode.render();
+        rootNode.getTransform().resetAnimations();
         FBOManager.useFBO(false);
         FBOManager.renderFBOQuad();
     }
 
     public static GameObject FindGameObjectWithTag(String tag) {
-        for (GameObject g : gameObjects) {
-            if (g.getTag().equals(tag)) {
-                return g;
-            } else if (g.getChildWithTag(tag) != null) {
-                return g.getChildWithTag(tag);
-            }
-        }
-        return null;
+        return rootNode.getChildWithTag(tag);
     }
     
     public static ArrayList<GameObject> FindGameObjectsWithTag(String tag) {
-        ArrayList<GameObject> gos = new ArrayList<>();
-        for (GameObject g : gameObjects) {
-            if (g.getTag().equals(tag)) {
-                gos.add(g);
-            } else if (g.getChildWithTag(tag) != null) {
-                gos.add(g.getChildWithTag(tag));
-            }
-        }
-        return null;
+        return rootNode.getChildrenWithTag(tag);
     }
     
     public static void loadScene(QuantumScene nextScene){
@@ -84,6 +65,7 @@ public class SceneManager {
             }
         }
         for(GameObject g : ids){
+            rootNode.removeChild(g);
             g.destroy();
             gameObjects.remove(g);
         }

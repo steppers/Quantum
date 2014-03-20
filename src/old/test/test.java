@@ -1,6 +1,6 @@
 package old.test;
 
-import old.game.QuantumGame;
+import old.engine.core.QuantumGame;
 import old.engine.default_Materials.DiffuseMaterial;
 import old.engine.default_Materials.SpecularMaterial;
 import old.engine.ext.SceneManager;

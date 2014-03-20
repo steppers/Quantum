@@ -2,7 +2,7 @@ package old.engine.components;
 
 import old.engine.config.Options;
 import old.engine.core.Window;
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 import old.engine.math.Matrix4f;
 import old.engine.math.Vector3f;
 import org.lwjgl.opengl.Display;
@@ -29,24 +29,24 @@ public class Camera extends Component
     }
     
     public Matrix4f getProjectedTransformation(Matrix4f transformation) {
-        Matrix4f cameraRotation = new Matrix4f().initCamera(gameObject.getTransform().forward, gameObject.getTransform().up);
-        Matrix4f cameraTranslation = new Matrix4f().initTranslation(-gameObject.getTransform().getPos().getX(),
-                                                                    -gameObject.getTransform().getPos().getY(),
-                                                                    -gameObject.getTransform().getPos().getZ());
+        Matrix4f cameraRotation = new Matrix4f().initCamera(parent.getTransform().forward, parent.getTransform().up);
+        Matrix4f cameraTranslation = new Matrix4f().initTranslation(-parent.getTransform().getPos().getX(),
+                                                                    -parent.getTransform().getPos().getY(),
+                                                                    -parent.getTransform().getPos().getZ());
 
         return perspectiveMatrix.mul(cameraRotation.mul(cameraTranslation.mul(transformation)));
     }
     
     public Matrix4f getViewMatrix(Matrix4f transformation){
-        Matrix4f cameraRotation = new Matrix4f().initCamera(gameObject.getTransform().forward, gameObject.getTransform().up);
-        Matrix4f cameraTranslation = new Matrix4f().initTranslation(-gameObject.getTransform().getPos().getX(),
-                                                                    -gameObject.getTransform().getPos().getY(),
-                                                                    -gameObject.getTransform().getPos().getZ());
+        Matrix4f cameraRotation = new Matrix4f().initCamera(parent.getTransform().forward, parent.getTransform().up);
+        Matrix4f cameraTranslation = new Matrix4f().initTranslation(-parent.getTransform().getPos().getX(),
+                                                                    -parent.getTransform().getPos().getY(),
+                                                                    -parent.getTransform().getPos().getZ());
         return cameraRotation.mul(cameraTranslation);
     }
     
     public Matrix4f getNormalViewMatrix(Matrix4f transformation){
-        Matrix4f cameraRotation = new Matrix4f().initCamera(gameObject.getTransform().forward, gameObject.getTransform().up);
+        Matrix4f cameraRotation = new Matrix4f().initCamera(parent.getTransform().forward, parent.getTransform().up);
         return cameraRotation;
     }
 }

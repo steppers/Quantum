@@ -1,6 +1,6 @@
 package old.engine.components;
 
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 import old.engine.ext.SceneManager;
 import old.engine.graphics.Material;
 import old.engine.math.Matrix4f;

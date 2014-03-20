@@ -2,7 +2,7 @@ package old.Scripts;
 
 import old.engine.components.Component;
 import old.engine.core.Time;
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 
 public class SinYMovement extends Component
 {
@@ -14,9 +14,9 @@ public class SinYMovement extends Component
     
     @Override
     public void update(){
-        gameObject.getTransform().setAnimPos(gameObject.getTransform().getPos().getX(), 
-                                            (float)(gameObject.getTransform().getPos().getY()+Math.sin(Time.getDelta())), 
-                                            gameObject.getTransform().getPos().getZ());
+        parent.getTransform().setAnimPos(parent.getTransform().getPos().getX(),
+                                            (float)(parent.getTransform().getPos().getY()+Math.sin(Time.getDelta())),
+                parent.getTransform().getPos().getZ());
     }
     
 }

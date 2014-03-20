@@ -2,7 +2,7 @@ package old.Scripts;
 
 import old.engine.components.Component;
 import old.engine.core.Time;
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 
 public class SinYRotationInv extends Component
 {
@@ -14,9 +14,9 @@ public class SinYRotationInv extends Component
     
     @Override
     public void update(){
-        gameObject.getTransform().setRotation(gameObject.getTransform().getRotation().getX(), 
-                                            (float)(gameObject.getTransform().getRotation().getY()-90f*Math.sin(Time.getDelta())), 
-                                            gameObject.getTransform().getRotation().getZ());
+        parent.getTransform().setRotation(parent.getTransform().getRotation().getX(),
+                                            (float)(parent.getTransform().getRotation().getY()-90f*Math.sin(Time.getDelta())),
+                parent.getTransform().getRotation().getZ());
     }
     
 }

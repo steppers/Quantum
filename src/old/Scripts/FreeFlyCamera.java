@@ -5,7 +5,7 @@ import old.engine.config.Options;
 import old.engine.core.Input;
 import old.engine.core.Time;
 import old.engine.core.Window;
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 import old.engine.math.Vector2f;
 import old.engine.math.Vector3f;
 
@@ -35,16 +35,16 @@ public class FreeFlyCamera extends Component
         movementVector = Vector3f.ZERO_VECTOR;
 
         if (Input.getKey(Input.KEY_W)) {
-            movementVector = movementVector.add(gameObject.getTransform().forward);
+            movementVector = movementVector.add(parent.getTransform().forward);
         }
         if (Input.getKey(Input.KEY_S)) {
-            movementVector = movementVector.sub(gameObject.getTransform().forward);
+            movementVector = movementVector.sub(parent.getTransform().forward);
         }
         if (Input.getKey(Input.KEY_A)) {
-            movementVector = movementVector.sub(gameObject.getTransform().left);
+            movementVector = movementVector.sub(parent.getTransform().left);
         }
         if (Input.getKey(Input.KEY_D)) {
-            movementVector = movementVector.add(gameObject.getTransform().left);
+            movementVector = movementVector.add(parent.getTransform().left);
         }
 
         if (mouseLocked) {
@@ -54,14 +54,14 @@ public class FreeFlyCamera extends Component
             boolean rotX = deltaPos.getY() != 0;
 
             if (rotY) {
-                gameObject.getTransform().setRotation(gameObject.getTransform().getRotation().getX(),
-                                                      gameObject.getTransform().getRotation().getY() - deltaPos.getX() * Options.MOUSE_SENSITIVITY,
-                                                      gameObject.getTransform().getRotation().getZ());
+                parent.getTransform().setRotation(parent.getTransform().getRotation().getX(),
+                        parent.getTransform().getRotation().getY() - deltaPos.getX() * Options.MOUSE_SENSITIVITY,
+                        parent.getTransform().getRotation().getZ());
             }
             if (rotX) {
-                gameObject.getTransform().setRotation(gameObject.getTransform().getRotation().getX() + deltaPos.getY() * Options.MOUSE_SENSITIVITY,
-                                                      gameObject.getTransform().getRotation().getY(),
-                                                      gameObject.getTransform().getRotation().getZ());
+                parent.getTransform().setRotation(parent.getTransform().getRotation().getX() + deltaPos.getY() * Options.MOUSE_SENSITIVITY,
+                        parent.getTransform().getRotation().getY(),
+                        parent.getTransform().getRotation().getZ());
             }
             if (rotY || rotX) {
                 Input.setMousePosition(centerPosition);
@@ -80,7 +80,7 @@ public class FreeFlyCamera extends Component
         if (movementVector.length() > 0) {
             movementVector = movementVector.normalized();
         }
-        gameObject.getTransform().setPos(gameObject.getTransform().getPos().add(movementVector.mul(movAmt)));
+        parent.getTransform().setPos(parent.getTransform().getPos().add(movementVector.mul(movAmt)));
     }
     
 }

@@ -1,10 +1,11 @@
 package old.test;
 
 import old.Scripts.FreeFlyCamera;
+import old.Scripts.SinYRotation;
 import old.engine.components.*;
 import old.engine.config.Options;
 import old.engine.core.QuantumScene;
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 import old.engine.ext.SceneManager;
 import old.engine.graphics.MaterialBank;
 import old.engine.graphics.MeshGenerator;
@@ -59,7 +60,9 @@ public class Scene1 extends QuantumScene
         SceneModel.getComponent(MeshRenderer.class).setMaterial(MaterialBank.getMaterial("scene1"));
         SceneModel.getComponent(MeshFilter.class).setSharedMesh(ModelBank.GetModel("TestScene"));
         SceneModel.getTransform().setPos(20,0,0);
-        SceneManager.addGameObject(SceneModel);
+        //SceneManager.addGameObject(SceneModel);
+        //SceneModel.setRemoveOnSceneLoad(false);
+        box1.addChild(SceneModel);
         
         if(SceneManager.FindGameObjectWithTag("Sun") == null){
             sun = new GameObject();

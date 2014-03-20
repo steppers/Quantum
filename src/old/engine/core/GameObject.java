@@ -1,4 +1,4 @@
-package old.engine.ext;
+package old.engine.core;
 
 import old.engine.components.Component;
 import old.engine.components.Transform;
@@ -11,8 +11,9 @@ public class GameObject {
     private boolean Static;
     private String tag = "";
     private ArrayList<Component> components = new ArrayList<>();
-    private ArrayList<GameObject> children = new ArrayList<>();
+    private ArrayList<GameObject> children;
     private GameObject parent;
+    private Transform transform;
     
     private boolean removeOnSceneLoad = true;
 
@@ -21,8 +22,9 @@ public class GameObject {
     }
 
     public GameObject(Vector3f pos, Vector3f rot, Vector3f scale, String tag) {
-        components.add(new Transform(this, pos, rot, scale));
+        transform = new Transform(this, pos, rot, scale);
         this.tag = tag;
+        children = new ArrayList<GameObject>();
     }
 
     public void input() {
@@ -75,18 +77,18 @@ public class GameObject {
     }
 
     public Transform getTransform() {
-        for (Component c : components) {
-            if (c.getType().equals("Transform")) {
-                return (Transform) c;
-            }
-        }
-        return null;
+        return transform;
     }
 
     public GameObject getChildWithTag(String tag) {
         for (GameObject g : children) {
             if (g.getTag().equals(tag)) {
                 return g;
+            }else{
+                GameObject v = g.getChildWithTag(tag);
+                if(v != null){
+                    return v;
+                }
             }
         }
         return null;
@@ -95,7 +97,11 @@ public class GameObject {
     public ArrayList<GameObject> getChildrenWithTag(String tag) {
         ArrayList<GameObject> gos = new ArrayList<>();
         for (GameObject g : children) {
-            
+            if (g.getTag().equals(tag)) {
+                gos.add(g);
+            } else {
+                gos.addAll(g.getChildrenWithTag(tag));
+            }
         }
         return gos;
     }
@@ -107,9 +113,22 @@ public class GameObject {
             return null;
     }
 
-    public void addChild(GameObject gameObject) {
-        gameObject.setParent(this);
-        children.add(gameObject);
+    public void addChild(GameObject child) {
+        child.setParent(this);
+        children.add(child);
+    }
+
+    public void removeChild(GameObject child){
+        children.remove(child);
+    }
+
+    public void resetAnimations(){
+        getTransform().resetAnimations();
+        for (GameObject g : children) {
+            if (g.isActive()) {
+                g.resetAnimations();
+            }
+        }
     }
 
     public String getTag() {

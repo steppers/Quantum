@@ -1,6 +1,6 @@
 package old.engine.components;
 
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 import old.engine.graphics.LightModel;
 import old.engine.lights.Attenuation;
 import old.engine.lights.BaseLight;
@@ -21,7 +21,7 @@ public class PointLightComponent extends Component
     
     @Override
     public void update(){
-        light.setPosition(gameObject.getTransform().getPosLight());
+        light.setPosition(parent.getTransform().getPosLight());
     }
     
     public void setRange(float range){

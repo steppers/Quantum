@@ -1,4 +1,4 @@
-package old.game;
+package old.engine.core;
 
 import old.engine.ext.SceneManager;
 

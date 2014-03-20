@@ -64,30 +64,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CoreEngine.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CoreEngine.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/old/engine/core/CoreEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="78" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.582343" vertical-offset="439" max-vertical-offset="2907">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Window.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/old/engine/core/Window.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="5" selection-start="3748" selection-end="3748" vertical-scroll-proportion="0.0" vertical-offset="922" max-vertical-offset="1972">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Options.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/old/engine/config/Options.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="41" selection-end="41" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="612">
+            <state line="18" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2839">
               <folding />
             </state>
           </provider>
@@ -96,19 +76,47 @@
       <file leaf-file-name="test.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/old/test/test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="33" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
+            <state line="19" column="0" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="782">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/old/game/Main.java">
+      <file leaf-file-name="Scene1.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/old/test/Scene1.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="45" selection-start="544" selection-end="544" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="561">
+            <state line="62" column="10" selection-start="2559" selection-end="2559" vertical-scroll-proportion="0.0" vertical-offset="788" max-vertical-offset="1496">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SceneManager.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/old/engine/ext/SceneManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="64" column="13" selection-start="1761" selection-end="1761" vertical-scroll-proportion="0.36842105" vertical-offset="867" max-vertical-offset="1343">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameObject.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/old/engine/core/GameObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="104" column="9" selection-start="2822" selection-end="2822" vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="3009">
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#2088#2089#0" expanded="true" />
+                <element signature="e#2120#2121#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Component.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/old/engine/components/Component.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="5" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="816">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,8 +139,21 @@
         <option value="$PROJECT_DIR$/src/old/engine/core/QuantumGame.java" />
         <option value="$PROJECT_DIR$/src/old/test/test.java" />
         <option value="$PROJECT_DIR$/src/old/engine/core/Window.java" />
-        <option value="$PROJECT_DIR$/src/old/game/Main.java" />
         <option value="$PROJECT_DIR$/src/old/engine/core/CoreEngine.java" />
+        <option value="$PROJECT_DIR$/src/old/engine/components/Component.java" />
+        <option value="$PROJECT_DIR$/src/old/Scripts/SinYRotation.java" />
+        <option value="$PROJECT_DIR$/src/old/engine/components/Camera.java" />
+        <option value="$PROJECT_DIR$/src/old/engine/components/DirectionalLightComponent.java" />
+        <option value="$PROJECT_DIR$/src/old/engine/components/PointLightComponent.java" />
+        <option value="$PROJECT_DIR$/src/old/engine/components/SpotLightComponent.java" />
+        <option value="$PROJECT_DIR$/src/old/Scripts/FreeFlyCamera.java" />
+        <option value="$PROJECT_DIR$/src/old/Scripts/SinYMovement.java" />
+        <option value="$PROJECT_DIR$/src/old/Animation/Animator.java" />
+        <option value="$PROJECT_DIR$/src/old/Scripts/SinYRotationInv.java" />
+        <option value="$PROJECT_DIR$/src/old/game/Main.java" />
+        <option value="$PROJECT_DIR$/src/old/test/Scene1.java" />
+        <option value="$PROJECT_DIR$/src/old/engine/core/GameObject.java" />
+        <option value="$PROJECT_DIR$/src/old/engine/ext/SceneManager.java" />
       </list>
     </option>
   </component>
@@ -372,6 +393,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Quantum Game Engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Quantum" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="old" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -591,7 +638,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -601,7 +648,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4113821" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4113821" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -659,11 +706,6 @@
         <state line="8" column="60" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="1870" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/old/Animation/Animator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="60" selection-start="217" selection-end="217" vertical-scroll-proportion="-0.05752961" vertical-offset="136" max-vertical-offset="1870" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/versionHistory/version.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589" />
@@ -686,23 +728,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1776721" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/old/engine/components/Camera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1341" selection-end="1341" vertical-scroll-proportion="0.8629442" vertical-offset="0" max-vertical-offset="901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/old/engine/components/MeshFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="260" selection-end="260" vertical-scroll-proportion="0.60714287" vertical-offset="0" max-vertical-offset="459">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/old/engine/components/MeshRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="4" selection-start="269" selection-end="269" vertical-scroll-proportion="-0.42105263" vertical-offset="272" max-vertical-offset="748">
           <folding />
         </state>
       </provider>
@@ -742,13 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/old/game/QuantumGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="0.37777779" vertical-offset="0" max-vertical-offset="476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/old/engine/core/Texture.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="5" selection-start="315" selection-end="315" vertical-scroll-proportion="0.36309522" vertical-offset="65" max-vertical-offset="765">
@@ -777,22 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/old/test/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="33" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/old/game/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="45" selection-start="544" selection-end="544" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="561">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/old/FBO/FBOManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="4" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.5833333" vertical-offset="446" max-vertical-offset="5440">
@@ -811,12 +816,141 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/old/engine/core/CoreEngine.java">
+    <entry file="file://$PROJECT_DIR$/src/old/engine/core/QuantumGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="78" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.582343" vertical-offset="439" max-vertical-offset="2907">
+        <state line="7" column="0" selection-start="108" selection-end="108" vertical-scroll-proportion="0.20203735" vertical-offset="0" max-vertical-offset="589">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/engine/components/Transform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="27" selection-start="256" selection-end="256" vertical-scroll-proportion="-0.8576577" vertical-offset="612" max-vertical-offset="2176">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/engine/components/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="5" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="816">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/Scripts/SinYRotation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="298" selection-end="298" vertical-scroll-proportion="0.36363637" vertical-offset="68" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/engine/components/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="97" selection-start="2186" selection-end="2186" vertical-scroll-proportion="0.54545456" vertical-offset="527" max-vertical-offset="901">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/engine/components/SpotLightComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="46" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.65927976" vertical-offset="102" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/engine/components/PointLightComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="32" selection-start="735" selection-end="735" vertical-scroll-proportion="0.34072024" vertical-offset="183" max-vertical-offset="748">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/engine/components/DirectionalLightComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="46" selection-start="887" selection-end="887" vertical-scroll-proportion="0.6818182" vertical-offset="85" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/Animation/Animator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="14" selection-start="2709" selection-end="2709" vertical-scroll-proportion="1.0641711" vertical-offset="1302" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/Scripts/SinYRotationInv.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="42" selection-start="279" selection-end="279" vertical-scroll-proportion="0.4857143" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/Scripts/SinYMovement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="22" selection-start="545" selection-end="545" vertical-scroll-proportion="0.8634921" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/Scripts/FreeFlyCamera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="43" selection-start="2897" selection-end="2897" vertical-scroll-proportion="1.2748344" vertical-offset="890" max-vertical-offset="1445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/game/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="43" selection-start="428" selection-end="428" vertical-scroll-proportion="0.2984127" vertical-offset="229" max-vertical-offset="544">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/engine/core/CoreEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="416" selection-end="416" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2839">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0" vertical-offset="344" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/engine/components/MeshRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="0" selection-start="1398" selection-end="1398" vertical-scroll-proportion="0.6315789" vertical-offset="323" max-vertical-offset="748">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/test/Scene1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="10" selection-start="2559" selection-end="2559" vertical-scroll-proportion="0.0" vertical-offset="788" max-vertical-offset="1496">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/engine/core/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="9" selection-start="2822" selection-end="2822" vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="3009">
+          <folding>
+            <element signature="e#2088#2089#0" expanded="true" />
+            <element signature="e#2120#2121#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/old/engine/ext/SceneManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="13" selection-start="1761" selection-end="1761" vertical-scroll-proportion="0.36842105" vertical-offset="867" max-vertical-offset="1343">
+          <folding />
         </state>
       </provider>
     </entry>

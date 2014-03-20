@@ -1,7 +1,7 @@
 package old.Animation;
 
 import old.engine.components.Component;
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 import java.util.ArrayList;
 
 public class Animator extends Component
@@ -98,9 +98,9 @@ public class Animator extends Component
     }
     
     private void process(AnimationFrame a){
-        gameObject.getTransform().setAnimPos(a.getPosition());
-        gameObject.getTransform().setAnimRot(a.getRotation());
-        gameObject.getTransform().setAnimScale(a.getScale());
+        parent.getTransform().setAnimPos(a.getPosition());
+        parent.getTransform().setAnimRot(a.getRotation());
+        parent.getTransform().setAnimScale(a.getScale());
     }
     
 }

@@ -1,16 +1,16 @@
 package old.engine.components;
 
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 
 public class Component 
 {
-    public GameObject gameObject;
+    public GameObject parent;
     private String type;
     private boolean active = true;
     
     public Component(GameObject gameObject, String type)
     {
-        this.gameObject = gameObject;
+        this.parent = gameObject;
         this.type = type;
     }
     
@@ -27,11 +27,11 @@ public class Component
     }
 
     public GameObject getGameObject() {
-        return gameObject;
+        return parent;
     }
 
     public void setGameObject(GameObject gameObject) {
-        this.gameObject = gameObject;
+        this.parent = gameObject;
     } 
 
     public String getType() {

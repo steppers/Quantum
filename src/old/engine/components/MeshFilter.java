@@ -1,7 +1,7 @@
 package old.engine.components;
 
 import old.engine.core.Mesh;
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 
 public class MeshFilter extends Component
 {

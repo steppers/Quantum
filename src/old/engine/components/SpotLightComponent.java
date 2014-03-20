@@ -1,6 +1,6 @@
 package old.engine.components;
 
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 import old.engine.graphics.LightModel;
 import old.engine.lights.Attenuation;
 import old.engine.lights.BaseLight;
@@ -21,10 +21,10 @@ public class SpotLightComponent extends Component
     
     @Override
     public void update(){
-        light.setPosition(gameObject.getTransform().getPosLight());
-        Vector3f dir = Vector3f.FORWARD.rotate(gameObject.getTransform().getRotation().getX(), Vector3f.X_AXIS)
-                                .rotate(gameObject.getTransform().getRotation().getY(), Vector3f.Y_AXIS)
-                                .rotate(gameObject.getTransform().getRotation().getZ(), Vector3f.Z_AXIS);
+        light.setPosition(parent.getTransform().getPosLight());
+        Vector3f dir = Vector3f.FORWARD.rotate(parent.getTransform().getRotation().getX(), Vector3f.X_AXIS)
+                                .rotate(parent.getTransform().getRotation().getY(), Vector3f.Y_AXIS)
+                                .rotate(parent.getTransform().getRotation().getZ(), Vector3f.Z_AXIS);
         light.setDirection(dir);
     }
     

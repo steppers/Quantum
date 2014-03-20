@@ -20,7 +20,6 @@ public class Main {
         VersionTracker.UpdateVersionData();
         CoreEngine engine = new CoreEngine(900, 600, 60, new test());
         engine.CreateWindow(Constants.TITLE);
-        engine.setDisplayMode(1366, 768, true);
         engine.start();
     }
 

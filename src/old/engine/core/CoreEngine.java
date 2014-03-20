@@ -1,9 +1,5 @@
 package old.engine.core;
 
-import old.game.QuantumGame;
-
-import static org.lwjgl.opengl.GL11.glViewport;
-
 
 /**
  * Class {@code CoreEngine} is the root of the entire Quantum

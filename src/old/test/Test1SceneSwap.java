@@ -3,7 +3,7 @@ package old.test;
 import old.engine.components.Component;
 import old.engine.core.Input;
 import old.engine.core.Time;
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 import old.engine.ext.SceneManager;
 
 public class Test1SceneSwap extends Component

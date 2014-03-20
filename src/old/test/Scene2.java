@@ -3,7 +3,7 @@ package old.test;
 import old.engine.components.MeshFilter;
 import old.engine.components.MeshRenderer;
 import old.engine.core.QuantumScene;
-import old.engine.ext.GameObject;
+import old.engine.core.GameObject;
 import old.engine.ext.SceneManager;
 import old.engine.graphics.MaterialBank;
 import old.engine.graphics.ModelBank;
