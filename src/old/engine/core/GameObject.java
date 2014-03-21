@@ -3,6 +3,8 @@ package old.engine.core;
 import old.engine.components.Component;
 import old.engine.components.Transform;
 import old.engine.math.Vector3f;
+import old.engine.shaders.Shader;
+
 import java.util.ArrayList;
 
 public class GameObject {
@@ -53,15 +55,15 @@ public class GameObject {
         }
     }
 
-    public void render() {
+    public void render(Shader shader) {
         for (Component c : components) {
-            if ("MeshRenderer".equals(c.getType()) && c.isActive() && this.isActive()) {
-                c.render();
+            if (c.isActive() && this.isActive()) {
+                c.render(transform, shader);
             }
         }
         for (GameObject g : children) {
             if (g.isActive()) {
-                g.render();
+                g.render(shader);
             }
         }
     }

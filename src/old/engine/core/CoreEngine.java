@@ -36,23 +36,17 @@ public class CoreEngine {
         this.width = width;
         this.height = height;
         this.frameTime = 1.0/framerate;
-        this.renderingEngine = new RenderingEngine();
-    }
-
-    private void initializeRenderingSystem(){
-        System.out.println(RenderUtil.getOpenGLVersion());
-        RenderUtil.initGraphics();
     }
 
     public void CreateWindow(String title){
         Window.createWindow(title + " | Build No: " + VersionTracker.version);
         Window.setDisplayMode(this.width, this.height, false);
-        initializeRenderingSystem();
+        this.renderingEngine = new RenderingEngine();
     }
 
     public void setDisplayMode(int width, int height, boolean fs){
         Window.setDisplayMode(width, height, fs);
-        RenderUtil.initGraphics();
+        this.renderingEngine = new RenderingEngine();
         this.width = width;
         this.height = height;
     }
@@ -130,9 +124,8 @@ public class CoreEngine {
                 }
             }
             if (render) {
-//                renderingEngine.render(SceneManager.getRootNode());
-//                Window.render();
-                render();
+                renderingEngine.render(SceneManager.getRootNode());
+                Window.render();
                 frames++;
             } else {
                 try {
@@ -144,17 +137,6 @@ public class CoreEngine {
         }
 
         cleanUp();
-    }
-
-    /**
-     * Updates the viewport and renders the game geometry.
-     * 
-     * Called by {@code run()}.
-     */
-    private void render() {
-        RenderUtil.clearScreen();
-        game.render();
-        Window.render();
     }
 
     /**

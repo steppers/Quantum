@@ -1,6 +1,6 @@
 package old.engine.default_shaders;
 
-import old.engine.core.RenderUtil;
+import old.engine.core.RenderingEngine;
 import old.engine.core.Texture;
 import old.engine.ext.SceneManager;
 import old.engine.graphics.LightModel;
@@ -65,11 +65,7 @@ public class SpecularShader extends Shader
     
     @Override
     public void updateUniforms(Matrix4f worldMatrix, Matrix4f projectedMatrix, Matrix4f viewMatrix, Matrix4f normalViewMatrix, Material material) {
-        if (material.getProperty("BaseTexture", Texture.class) != null) {
-            material.getProperty("BaseTexture", Texture.class).bind();
-        } else {
-            RenderUtil.unbindTextures();
-        }
+        material.getProperty("BaseTexture", Texture.class).bind();
         
         setUniform("transformProjected", projectedMatrix);
         setUniform("transform", worldMatrix);

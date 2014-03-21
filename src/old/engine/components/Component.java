@@ -2,6 +2,7 @@ package old.engine.components;
 
 import old.engine.core.GameObject;
 import old.engine.core.QuantumGame;
+import old.engine.shaders.Shader;
 
 public class Component 
 {
@@ -23,7 +24,7 @@ public class Component
         
     }
     
-    public void render(){
+    public void render(Transform transform, Shader shader){
         
     }
 

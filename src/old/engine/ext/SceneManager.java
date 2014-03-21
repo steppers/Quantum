@@ -1,9 +1,7 @@
 package old.engine.ext;
 
-import old.FBO.FBOManager;
 import old.engine.core.GameObject;
 import old.engine.core.QuantumScene;
-import old.engine.core.RenderUtil;
 import old.engine.math.Vector3f;
 
 import java.util.ArrayList;
@@ -33,16 +31,6 @@ public class SceneManager {
 
     public static void update() {
         rootNode.update();
-    }
-
-    public static void render() {
-        //Use the FBO
-        FBOManager.useFBO(true);
-        RenderUtil.clearScreen();
-        rootNode.render();
-        rootNode.getTransform().resetAnimations();
-        FBOManager.useFBO(false);
-        FBOManager.renderFBOQuad();
     }
 
     public static GameObject FindGameObjectWithTag(String tag) {

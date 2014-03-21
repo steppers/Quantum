@@ -42,7 +42,7 @@ public class FBOManager
     private static int random_Tex;
     private static int depth_Tex;
     
-    //old.FBO Variables
+    //FBO Variables
     public static int[] fboData;
     
     public static void init()
@@ -80,6 +80,11 @@ public class FBOManager
         GL13.glActiveTexture(GL13.GL_TEXTURE0);
         GL11.glBindTexture(GL11.GL_TEXTURE_2D, fboData[1]);
         GL20.glUniform1i(color_Tex, 0);
+
+        // Bind the depth texture
+        GL13.glActiveTexture(GL13.GL_TEXTURE4);
+        GL11.glBindTexture(GL11.GL_TEXTURE_2D, fboData[2]);
+        GL20.glUniform1i(depth_Tex, 4);
         
         // Bind the Normal Texture
         GL13.glActiveTexture(GL13.GL_TEXTURE1);
