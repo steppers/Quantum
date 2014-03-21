@@ -28,29 +28,31 @@ public class Transform extends Component
         this.scale = scale;
     }
     
-    public void calcTransformation(){
+    public Matrix4f getTransformation() {
+
         Matrix4f translationMatrix = new Matrix4f().initTranslation(pos.getX() + animPos.getX(), pos.getY() + animPos.getY(), pos.getZ() + animPos.getZ());
         Matrix4f rotationMatrix = new Matrix4f().initRotation(-rot.getX() + animRot.getX(), rot.getY() + animRot.getY(), rot.getZ() + animRot.getZ());
         Matrix4f scaleMatrix = new Matrix4f().initScale(scale.getX() * animScale.getX(), scale.getY() * animScale.getY(), scale.getZ() * animScale.getZ());
         transformationMatrix = translationMatrix.mul(rotationMatrix.mul(scaleMatrix));
-        
+
         if(super.getGameObject().getParent() != null){
-            super.getGameObject().getParent().getTransform().calcTransformation();
+            super.getGameObject().getParent().getTransform().getTransformation();
             Matrix4f parentTranslationMatrix = super.getGameObject().getParent().getTransform().getTransformation();
             transformationMatrix = parentTranslationMatrix.mul(transformationMatrix);
         }
-    }
-    
-    public Matrix4f getTransformation() {
+
         return transformationMatrix;
+    }
+
+    public Matrix4f getProjectedTransformation(Camera camera){
+        return camera.getViewProjection().mul(getTransformation());
     }
     
     public Vector3f getPos() {
         return pos;
     }
     
-    public Vector3f getPosLight(){        
-        calcTransformation();
+    public Vector3f getPosLight(){
         Matrix4f mat = getTransformation();
         return new Vector3f(mat.get(0, 3), mat.get(1, 3), mat.get(2, 3));
     }

@@ -43,5 +43,6 @@ public class test extends QuantumGame
 
         scene1 = new Scene1();
         SceneManager.loadScene(scene1);
+        scene1.initCamera();
     }
 }

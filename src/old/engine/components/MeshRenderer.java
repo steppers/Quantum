@@ -2,6 +2,7 @@ package old.engine.components;
 
 import old.engine.core.GameObject;
 import old.engine.core.QuantumGame;
+import old.engine.core.RenderingEngine;
 import old.engine.ext.SceneManager;
 import old.engine.graphics.Material;
 import old.engine.math.Matrix4f;
@@ -26,14 +27,9 @@ public class MeshRenderer extends Component
     @Override
     public void render(Transform transform, Shader shader){
         shader.bind();
-        
-        transform.calcTransformation();
-        Matrix4f transformation = transform.getTransformation();
-        shader.updateUniforms(transformation,
-                SceneManager.FindGameObjectWithTag("Camera").getComponent(Camera.class).getProjectedTransformation(transformation),
-                SceneManager.FindGameObjectWithTag("Camera").getComponent(Camera.class).getViewMatrix(transformation),
-                SceneManager.FindGameObjectWithTag("Camera").getComponent(Camera.class).getNormalViewMatrix(transformation),
-                        material);
+        shader.updateUniforms(transform,
+                RenderingEngine.getCamera().getComponent(Camera.class),
+                material);
         meshFilter.getSharedMesh().draw();
     }  
 

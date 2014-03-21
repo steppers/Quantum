@@ -1,5 +1,8 @@
 package old.engine.default_shaders;
 
+import old.engine.components.Camera;
+import old.engine.components.Transform;
+import old.engine.core.GameObject;
 import old.engine.core.RenderingEngine;
 import old.engine.core.Texture;
 import old.engine.graphics.LightModel;
@@ -60,11 +63,14 @@ public class DiffuseShader extends Shader
     }
     
     @Override
-    public void updateUniforms(Matrix4f worldMatrix, Matrix4f projectedMatrix, Matrix4f viewMatrix, Matrix4f normalViewMatrix, Material material) {
+    public void updateUniforms(Transform transform, Camera camera, Material material) {
+
+        Matrix4f worldMatrix = transform.getTransformation();
+        Matrix4f projectedMatrix = camera.getViewProjection().mul(worldMatrix);
         material.getProperty("BaseTexture", Texture.class).bind();
 
-        setUniform("normalMatrix", normalViewMatrix);
-        setUniform("transformView", viewMatrix);
+        setUniform("normalMatrix", camera.getNormalViewMatrix(worldMatrix));
+        setUniform("transformView", camera.getViewMatrix(worldMatrix));
         setUniform("transformProjected", projectedMatrix);
         setUniform("transform", worldMatrix);
         setUniform("BaseColor", material.getProperty("BaseColor", Vector3f.class));

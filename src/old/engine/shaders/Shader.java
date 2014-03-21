@@ -1,5 +1,9 @@
 package old.engine.shaders;
 
+import old.engine.components.Camera;
+import old.engine.components.Transform;
+import old.engine.core.GameObject;
+import old.engine.core.RenderingEngine;
 import old.engine.core.Util;
 import old.engine.graphics.Material;
 import old.engine.lights.BaseLight;
@@ -16,6 +20,7 @@ import static org.lwjgl.opengl.GL32.*;
 
 public class Shader {
 
+    private RenderingEngine renderingEngine;
     private int program;
     private HashMap<String, Integer> uniforms;
 
@@ -35,6 +40,10 @@ public class Shader {
 
     public void bind() {
         glUseProgram(program);
+    }
+
+    public void updateUniforms(Transform transform, Camera camera, Material material) {
+
     }
 
     public void addUniform(String uniform) {
@@ -129,9 +138,6 @@ public class Shader {
 
         return shaderSource.toString();
     }
-    
-    public void updateUniforms(Matrix4f worldMatrix, Matrix4f projectedMatrix, Matrix4f viewMatrix, Matrix4f normalViewMatrix, Material material) {
-    }
 
     public void setUniformi(String uniformName, int value) {
         glUniform1i(uniforms.get(uniformName), value);
@@ -172,5 +178,13 @@ public class Shader {
         setUniform(uniformName + ".pointLight", spotLight.getPointLight());
         setUniform(uniformName + ".direction", spotLight.getDirection());
         setUniformf(uniformName + ".cutoff", spotLight.getCutoff());
+    }
+
+    public void setRenderingEngine(RenderingEngine renderingEngine){
+        this.renderingEngine = renderingEngine;
+    }
+
+    public RenderingEngine getRenderingEngine(){
+        return renderingEngine;
     }
 }

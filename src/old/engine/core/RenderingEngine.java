@@ -2,7 +2,9 @@ package old.engine.core;
 
 import old.FBO.FBOManager;
 import old.engine.components.Camera;
+import old.engine.config.Options;
 import old.engine.default_shaders.DiffuseShader;
+import old.engine.ext.SceneManager;
 import old.engine.math.Vector3f;
 import org.lwjgl.opengl.GL12;
 
@@ -16,10 +18,13 @@ import static org.lwjgl.opengl.GL32.GL_DEPTH_CLAMP;
  */
 public class RenderingEngine {
 
+    private static GameObject mainCamera;
+
     public RenderingEngine(){
         System.out.println(getOpenGLVersion());
 
         FBOManager.init();
+        initCamera();
 
         glClearColor(0.5f, 0.5f, 0.7f, 0.0f);
 
@@ -32,6 +37,16 @@ public class RenderingEngine {
         glEnable(GL_TEXTURE_2D);
 
         glViewport(0,0,Window.getWidth(),Window.getHeight());
+    }
+
+    private void initCamera(){
+        mainCamera = new GameObject();
+        mainCamera.AddComponent(new Camera(mainCamera));
+        mainCamera.getComponent(Camera.class).setPerspective(Options.FOV, Options.Z_NEAR, Options.Z_FAR);
+        mainCamera.getTransform().setPos(-7, 10f, 7f);
+        mainCamera.getTransform().setRotation(-37, -135, 0);
+        mainCamera.setRemoveOnSceneLoad(false);
+        SceneManager.addGameObject(mainCamera);
     }
 
     public void render(GameObject object){
@@ -93,6 +108,10 @@ public class RenderingEngine {
     //Retrieves the current OpenGL Version
     private static String getOpenGLVersion() {
         return "OpenGL Version: " + glGetString(GL_VERSION);
+    }
+
+    public static GameObject getCamera(){
+        return mainCamera;
     }
 
 }

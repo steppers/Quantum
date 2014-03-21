@@ -27,6 +27,15 @@ public class Camera extends Component
     public void setPerspective(float fov, float zNear, float zFar){
         perspectiveMatrix = new Matrix4f().initProjection(fov, Window.getWidth(), Window.getHeight(), zNear, zFar);
     }
+
+    public Matrix4f getViewProjection(){
+        Matrix4f cameraRotation = new Matrix4f().initCamera(parent.getTransform().forward, parent.getTransform().up);
+        Matrix4f cameraTranslation = new Matrix4f().initTranslation(-parent.getTransform().getPos().getX(),
+                -parent.getTransform().getPos().getY(),
+                -parent.getTransform().getPos().getZ());
+
+        return perspectiveMatrix.mul(cameraRotation.mul(cameraTranslation));
+    }
     
     public Matrix4f getProjectedTransformation(Matrix4f transformation) {
         Matrix4f cameraRotation = new Matrix4f().initCamera(parent.getTransform().forward, parent.getTransform().up);

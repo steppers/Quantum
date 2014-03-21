@@ -6,6 +6,7 @@ import old.engine.components.*;
 import old.engine.config.Options;
 import old.engine.core.QuantumScene;
 import old.engine.core.GameObject;
+import old.engine.core.RenderingEngine;
 import old.engine.ext.SceneManager;
 import old.engine.graphics.MaterialBank;
 import old.engine.graphics.MeshGenerator;
@@ -74,18 +75,11 @@ public class Scene1 extends QuantumScene
             sun.setRemoveOnSceneLoad(false);
             SceneManager.addGameObject(sun);
         }
-        
-        if(SceneManager.FindGameObjectWithTag("Camera") == null){
-            camera = new GameObject();
-            camera.setTag("Camera");
-            camera.AddComponent(new Camera(camera));
-            camera.AddComponent(new FreeFlyCamera(camera));
-            camera.AddComponent(new Test1SceneSwap(camera));
-            camera.getComponent(Camera.class).setPerspective(Options.FOV, Options.Z_NEAR, Options.Z_FAR);
-            camera.getTransform().setPos(-7, 10f, 7f);
-            camera.getTransform().setRotation(-37, -135, 0);
-            camera.setRemoveOnSceneLoad(false);
-            SceneManager.addGameObject(camera);
-        }
+    }
+
+    public void initCamera(){
+        camera = RenderingEngine.getCamera();
+        camera.AddComponent(new FreeFlyCamera(camera));
+        camera.AddComponent(new Test1SceneSwap(camera));
     }
 }

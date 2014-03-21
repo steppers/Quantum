@@ -1,5 +1,7 @@
 package old.engine.default_shaders;
 
+import old.engine.components.Camera;
+import old.engine.components.Transform;
 import old.engine.core.RenderingEngine;
 import old.engine.core.Texture;
 import old.engine.ext.SceneManager;
@@ -64,7 +66,10 @@ public class SpecularShader extends Shader
     }
     
     @Override
-    public void updateUniforms(Matrix4f worldMatrix, Matrix4f projectedMatrix, Matrix4f viewMatrix, Matrix4f normalViewMatrix, Material material) {
+    public void updateUniforms(Transform transform, Camera camera, Material material) {
+
+        Matrix4f worldMatrix = transform.getTransformation();
+        Matrix4f projectedMatrix = camera.getViewProjection().mul(worldMatrix);
         material.getProperty("BaseTexture", Texture.class).bind();
         
         setUniform("transformProjected", projectedMatrix);
@@ -73,7 +78,7 @@ public class SpecularShader extends Shader
         
         setUniformf("specularIntensity", material.getProperty("specularIntensity", float.class));
         setUniformf("specularPower", material.getProperty("specularPower", float.class));
-        setUniform("eyePos", SceneManager.FindGameObjectWithTag("Camera").getTransform().getPos());
+        setUniform("eyePos", getRenderingEngine().getCamera().getTransform().getPos());
 
         setUniform("ambientLight", LightModel.GLOBAL_AMBIENT_LIGHT);
         
