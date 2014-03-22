@@ -13,9 +13,9 @@ public class SinYRotationInv extends Component
     }
     
     @Override
-    public void update(){
+    public void update(float delta){
         parent.getTransform().setRotation(parent.getTransform().getRotation().getX(),
-                                            (float)(parent.getTransform().getRotation().getY()-90f*Math.sin(Time.getDelta())),
+                                            (float)(parent.getTransform().getRotation().getY()-90f*Math.sin(delta)),
                 parent.getTransform().getRotation().getZ());
     }
     

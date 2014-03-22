@@ -29,13 +29,13 @@ public class Scene1 extends QuantumScene
     public void init(){
         Scene0 = new GameObject();
         Scene0.AddComponent(new MeshRenderer(Scene0));
-        Scene0.getComponent(MeshRenderer.class).setMaterial(MaterialBank.getMaterial("scene1"));
+        Scene0.getComponent(MeshRenderer.class).setMaterial(MaterialBank.getMaterial("specTest"));
         Scene0.getComponent(MeshFilter.class).setSharedMesh(MeshGenerator.NewPlane(10, 10));
         SceneManager.addGameObject(Scene0);
         
         Scene1 = new GameObject();
         Scene1.AddComponent(new MeshRenderer(Scene1));
-        Scene1.getComponent(MeshRenderer.class).setMaterial(MaterialBank.getMaterial("scene1"));
+        Scene1.getComponent(MeshRenderer.class).setMaterial(MaterialBank.getMaterial("specTest"));
         Scene1.getComponent(MeshFilter.class).setSharedMesh(MeshGenerator.NewPlane(10, 10));
         Scene1.getTransform().setRotation(0, 0, 90);
         Scene1.getTransform().setPos(5, 5, 0);
@@ -43,7 +43,7 @@ public class Scene1 extends QuantumScene
         
         Scene2 = new GameObject();
         Scene2.AddComponent(new MeshRenderer(Scene2));
-        Scene2.getComponent(MeshRenderer.class).setMaterial(MaterialBank.getMaterial("scene1"));
+        Scene2.getComponent(MeshRenderer.class).setMaterial(MaterialBank.getMaterial("specTest"));
         Scene2.getComponent(MeshFilter.class).setSharedMesh(MeshGenerator.NewPlane(10, 10));
         Scene2.getTransform().setRotation(-90, 0, 0);
         Scene2.getTransform().setPos(0, 5, -5);
@@ -51,7 +51,7 @@ public class Scene1 extends QuantumScene
         
         box1 = new GameObject();
         box1.AddComponent(new MeshRenderer(box1));
-        box1.getComponent(MeshRenderer.class).setMaterial(MaterialBank.getMaterial("scene1"));
+        box1.getComponent(MeshRenderer.class).setMaterial(MaterialBank.getMaterial("specTest"));
         box1.getComponent(MeshFilter.class).setSharedMesh(MeshGenerator.NewBox(5, 2, 2));
         box1.getTransform().setPos(0, 1, 0);
         box1.getTransform().setRotation(0, -20, 0);
@@ -59,7 +59,7 @@ public class Scene1 extends QuantumScene
         
         SceneModel = new GameObject();
         SceneModel.AddComponent(new MeshRenderer(SceneModel));
-        SceneModel.getComponent(MeshRenderer.class).setMaterial(MaterialBank.getMaterial("scene1"));
+        SceneModel.getComponent(MeshRenderer.class).setMaterial(MaterialBank.getMaterial("specTest"));
         SceneModel.getComponent(MeshFilter.class).setSharedMesh(ModelBank.GetModel("TestScene"));
         SceneModel.getTransform().setPos(20,0,0);
         SceneModel.setRemoveOnSceneLoad(false);
@@ -73,6 +73,7 @@ public class Scene1 extends QuantumScene
             sun.getTransform().setPos(0, 10, 0);
             sun.getTransform().setRotation(-45, -35, 0);
             sun.setRemoveOnSceneLoad(false);
+            //sun.setActive(false);
             SceneManager.addGameObject(sun);
         }
     }

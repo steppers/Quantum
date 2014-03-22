@@ -25,11 +25,18 @@ public class MeshRenderer extends Component
     }
     
     @Override
-    public void render(Transform transform, Shader shader){
-        shader.bind();
-        shader.updateUniforms(transform,
-                RenderingEngine.getCamera().getComponent(Camera.class),
-                material);
+    public void render(Transform transform, Shader shader, boolean useMaterial){
+        if(useMaterial){
+            material.getShader().bind();
+            material.getShader().updateUniforms(transform,
+                    RenderingEngine.getCamera().getComponent(Camera.class),
+                    material);
+        }else{
+            shader.bind();
+            shader.updateUniforms(transform,
+                    RenderingEngine.getCamera().getComponent(Camera.class),
+                    material);
+        }
         meshFilter.getSharedMesh().draw();
     }  
 

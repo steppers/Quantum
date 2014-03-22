@@ -4,15 +4,15 @@ import old.engine.ext.SceneManager;
 
 public abstract class QuantumGame {
 
-    public void init(){
+    public void init(RenderingEngine renderingEngine){
 
     }
 
-    public void input() {
-        SceneManager.input();
+    public void input(float delta) {
+        SceneManager.input(delta);
     }
 
-    public void update() {
-        SceneManager.update();
+    public void update(float delta) {
+        SceneManager.update(delta);
     }
 }

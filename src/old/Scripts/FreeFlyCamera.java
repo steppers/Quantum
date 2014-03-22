@@ -21,7 +21,7 @@ public class FreeFlyCamera extends Component
     }
     
     @Override
-    public void input(){
+    public void input(float delta){
         if (Input.getKey(Input.KEY_ESCAPE)) {
             Input.setCursor(true);
             mouseLocked = false;
@@ -70,11 +70,11 @@ public class FreeFlyCamera extends Component
     }
     
     @Override
-    public void update(){
-        float movAmt = (float) (Options.FF_MOVE_SPEED * Time.getDelta());
+    public void update(float delta){
+        float movAmt = (float) (Options.FF_MOVE_SPEED * delta);
         
         if(Input.getKey(Input.KEY_LSHIFT)){
-            movAmt = (float) (Options.FF_MOVE_SPEED * Time.getDelta());
+            movAmt = (float) (Options.FF_MOVE_SPEED * delta);
         }
         
         if (movementVector.length() > 0) {

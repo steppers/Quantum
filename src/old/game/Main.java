@@ -17,7 +17,7 @@ public class Main {
      */
     public static void main(String[] args) {
         VersionTracker.UpdateVersionData();
-        CoreEngine engine = new CoreEngine(900, 600, 60, new test());
+        CoreEngine engine = new CoreEngine(900, 600, 100, new test());
         engine.CreateWindow(Constants.TITLE);
         engine.start();
     }

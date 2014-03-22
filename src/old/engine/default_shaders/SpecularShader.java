@@ -28,6 +28,8 @@ public class SpecularShader extends Shader
         compileShader();
         
         addUniform("transform");
+        addUniform("transformView");
+        addUniform("normalMatrix");
         addUniform("transformProjected");
         addUniform("BaseColor");   
         addUniform("ambientLight");
@@ -71,7 +73,9 @@ public class SpecularShader extends Shader
         Matrix4f worldMatrix = transform.getTransformation();
         Matrix4f projectedMatrix = camera.getViewProjection().mul(worldMatrix);
         material.getProperty("BaseTexture", Texture.class).bind();
-        
+
+        setUniform("normalMatrix", camera.getNormalViewMatrix(worldMatrix));
+        setUniform("transformView", camera.getViewMatrix(worldMatrix));
         setUniform("transformProjected", projectedMatrix);
         setUniform("transform", worldMatrix);
         setUniform("BaseColor", material.getProperty("BaseColor", Vector3f.class));

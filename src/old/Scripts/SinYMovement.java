@@ -13,9 +13,9 @@ public class SinYMovement extends Component
     }
     
     @Override
-    public void update(){
+    public void update(float delta){
         parent.getTransform().setAnimPos(parent.getTransform().getPos().getX(),
-                                            (float)(parent.getTransform().getPos().getY()+Math.sin(Time.getDelta())),
+                                            (float)(parent.getTransform().getPos().getY()+Math.sin(delta)),
                 parent.getTransform().getPos().getZ());
     }
     

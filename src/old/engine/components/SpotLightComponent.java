@@ -20,7 +20,7 @@ public class SpotLightComponent extends Component
     }
     
     @Override
-    public void update(){
+    public void update(float delta){
         light.setPosition(parent.getTransform().getPosLight());
         Vector3f dir = Vector3f.FORWARD.rotate(parent.getTransform().getRotation().getX(), Vector3f.X_AXIS)
                                 .rotate(parent.getTransform().getRotation().getY(), Vector3f.Y_AXIS)

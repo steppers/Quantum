@@ -19,7 +19,7 @@ public class DirectionalLightComponent extends Component
     }
     
     @Override
-    public void update(){
+    public void update(float delta){
         Vector3f dir = Vector3f.FORWARD.rotate(parent.getTransform().getRotation().getX(), Vector3f.X_AXIS)
                                 .rotate(parent.getTransform().getRotation().getY(), Vector3f.Y_AXIS)
                                 .rotate(parent.getTransform().getRotation().getZ(), Vector3f.Z_AXIS);

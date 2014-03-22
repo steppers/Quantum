@@ -96,9 +96,9 @@ public class Animation
         this.speed = speed;
     }
     
-    public boolean isFinished(){
+    public boolean isFinished(float delta){
         if(isPlaying){
-            totalTime += Time.getDelta()*speed;
+            totalTime += delta*speed;
             if(isLooping()){
                 if(totalTime > length){
                     totalTime -= length;

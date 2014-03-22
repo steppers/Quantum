@@ -1,6 +1,7 @@
 package old.engine.core;
 
 import old.engine.config.Options;
+import old.engine.math.Vector2f;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
@@ -110,5 +111,9 @@ public class Window {
 
     public static String getTitle() {
         return Display.getTitle();
+    }
+
+    public static Vector2f getCenter(){
+        return new Vector2f(Display.getWidth()/2, Display.getHeight());
     }
 }

@@ -16,15 +16,15 @@ public class Component
         this.type = type;
     }
     
-    public void input(){
+    public void input(float delta){
         
     }
     
-    public void update(){
+    public void update(float delta){
         
     }
     
-    public void render(Transform transform, Shader shader){
+    public void render(Transform transform, Shader shader, boolean useMaterial){
         
     }
 

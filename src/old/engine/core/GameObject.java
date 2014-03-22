@@ -29,41 +29,41 @@ public class GameObject {
         children = new ArrayList<GameObject>();
     }
 
-    public void input() {
+    public void input(float delta) {
         for (Component c : components) {
             if (c.isActive() && this.isActive()) {
-                c.input();
+                c.input(delta);
             }
         }
         for (GameObject g : children) {
             if (g.isActive()) {
-                g.input();
+                g.input(delta);
             }
         }
     }
 
-    public void update() {
+    public void update(float delta) {
         for (Component c : components) {
             if (c.isActive() && this.isActive()) {
-                c.update();
+                c.update(delta);
             }
         }
         for (GameObject g : children) {
             if (g.isActive()) {
-                g.update();
+                g.update(delta);
             }
         }
     }
 
-    public void render(Shader shader) {
+    public void render(Shader shader, boolean useMaterial) {
         for (Component c : components) {
             if (c.isActive() && this.isActive()) {
-                c.render(transform, shader);
+                c.render(transform, shader, useMaterial);
             }
         }
         for (GameObject g : children) {
             if (g.isActive()) {
-                g.render(shader);
+                g.render(shader, useMaterial);
             }
         }
     }

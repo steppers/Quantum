@@ -22,15 +22,15 @@ public class SceneManager {
         g.destroy();
     }
 
-    public static void input() {
+    public static void input(float delta) {
         if(nextScene != null){
             updateLoadScene();
         }
-        rootNode.input();
+        rootNode.input(delta);
     }
 
-    public static void update() {
-        rootNode.update();
+    public static void update(float delta) {
+        rootNode.update(delta);
     }
 
     public static GameObject FindGameObjectWithTag(String tag) {

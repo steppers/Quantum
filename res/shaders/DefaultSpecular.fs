@@ -7,8 +7,11 @@ const int MAX_SPOT_LIGHTS = 8;
 in vec2 texCoord0;
 in vec3 normal0;
 in vec3 worldPos0;
+in vec3 vertexColor0;
 
-out vec4 fragColor;
+//out vec4 fragColor;
+uniform mat4 transformView;
+uniform mat4 normalMatrix;
 
 struct BaseLight
 {
@@ -146,5 +149,7 @@ void main()
         if(spotLights[i].pointLight.base.intensity > 0)
             totalLight += calcSpotLight(spotLights[i], normal);
     
-    fragColor = color * totalLight;
+    gl_FragData[0] = color * totalLight * vec4(vertexColor0, 1.0);
+    gl_FragData[1] = normalMatrix * vec4(normal0, 1.0);
+    gl_FragData[2] = transformView * vec4(worldPos0, 1.0);
 }

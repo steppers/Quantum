@@ -49,7 +49,7 @@ public class Shader {
     public void addUniform(String uniform) {
         int uniformLocation = glGetUniformLocation(program, uniform);
 
-        if (uniformLocation == 0xFFFFFFFF) {
+        if (uniformLocation == -1) {
             System.err.println("Error: Could not find uniform: " + uniform);
             new Exception().printStackTrace();
             System.exit(1);

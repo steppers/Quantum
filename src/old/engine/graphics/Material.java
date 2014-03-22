@@ -1,16 +1,15 @@
 package old.engine.graphics;
 
-import old.engine.components.MeshRenderer;
 import old.engine.core.Texture;
 import old.engine.math.Vector3f;
 import old.engine.shaders.Shader;
+
 import java.util.ArrayList;
 
 
 public class Material 
 { 
     public String name;
-    private MeshRenderer renderer;
     private Shader shader;
     private ArrayList<MaterialProperty> properties = new ArrayList<>();
     

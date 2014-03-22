@@ -15,14 +15,14 @@ public class Animator extends Component
     }
     
     @Override
-    public void update(){
+    public void update(float delta){
         for(Animation a : playing){
-            if(!a.paused && !a.isFinished()){
+            if(!a.paused && !a.isFinished(delta)){
                 process(a.getFrame());
             }
         }
         for(Animation a : animations){
-            if(a.isFinished()){
+            if(a.isFinished(delta)){
                 playing.remove(a);
                 a.isPlaying = false;
                 a.paused = false;

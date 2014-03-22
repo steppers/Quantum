@@ -69,7 +69,7 @@ float PostProcessSSAO(){
 }
 
 void main(void) {
-    float SSAO = PostProcessSSAO();
+    //float SSAO = PostProcessSSAO();
 	//out_Color = vec4(normalFromDepth(getDepth(pass_TextureCoord), pass_TextureCoord), 1.0);
 	//out_Color = vec4(getPosition(pass_TextureCoord), 1.0);
 	out_Color = texture(color_Tex, pass_TextureCoord);

@@ -20,7 +20,7 @@ public class PointLightComponent extends Component
     }
     
     @Override
-    public void update(){
+    public void update(float delta){
         light.setPosition(parent.getTransform().getPosLight());
     }
     
